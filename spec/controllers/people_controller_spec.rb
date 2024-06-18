@@ -12,9 +12,9 @@ RSpec.describe PeopleController, type: :controller do
       expect(response).to be_successful
     end
 
-    it "assigns @persons with paginated persons" do
+    it "assigns @people with paginated persons" do
       get :index, params: { page: 1 }
-      expect(assigns(:persons)).to eq(Person.page(1).per(10))
+      expect(assigns(:people)).to eq(Person.page(1).per(10))
     end
   end
 
