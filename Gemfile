@@ -46,3 +46,6 @@ gem "redis", "~> 4.0"
 gem 'activeadmin'
 gem 'devise'
 gem 'sassc-rails'
+
+#for pagination
+gem 'kaminari'

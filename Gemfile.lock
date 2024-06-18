@@ -349,6 +349,7 @@ DEPENDENCIES
   faker
   jbuilder
   jsbundling-rails
+  kaminari
   pry-rails
   puma (~> 5.0)
   rails (~> 7.0.1)

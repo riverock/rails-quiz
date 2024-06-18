@@ -16,6 +16,8 @@ table.table
         td= person.try(:phone)
         td= person.try(:email)
         td= person.try(:company).try(:name)
+    tr
+      td[colspan=4]= paginate @people, window: 2
 
 
 
