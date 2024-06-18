@@ -2,10 +2,20 @@ require 'rails_helper'
 
 RSpec.describe PeopleController, type: :controller do
   subject { response }
-  describe 'GET index' do
-    before { get :index }
+  describe "GET #index" do
+    before do
+      create_list(:person, 15) # Create 15 persons
+    end
 
-    it { is_expected.to have_http_status(:ok) }
+    it "returns a successful response" do
+      get :index
+      expect(response).to be_successful
+    end
+
+    it "assigns @persons with paginated persons" do
+      get :index, params: { page: 1 }
+      expect(assigns(:persons)).to eq(Person.page(1).per(10))
+    end
   end
 
   describe 'GET new' do
