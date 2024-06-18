@@ -41,3 +41,8 @@ end
 
 # Use Redis for Action Cable
 gem "redis", "~> 4.0"
+
+#authentication
+gem 'activeadmin'
+gem 'devise'
+gem 'sassc-rails'

@@ -1,7 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Listing people', type: :feature do
-  before do 
+  before(:each) do
+    @user = User.create(
+      email: 'user@gmail.com',
+      password: 'password',
+      password_confirmation: 'password'
+    )
+    login_as(@user, scope: :user)
+  
     Person.create(
       name: 'Foo Bar',
       phone_number: 'Biz',
